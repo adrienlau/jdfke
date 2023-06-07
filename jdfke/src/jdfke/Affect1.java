@@ -200,16 +200,32 @@ public class Affect1 {
 		
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int pv; 
-				pv= Integer.valueOf(lblNewLabel_8.getText());
-				if(pv < 20) lblNewLabel_8.setText(String.valueOf(pv+1));
+				int pv;
+				pv= Integer.valueOf(lblNewLabel_10.getText());
+				if(pv < 20) {
+					lblNewLabel_10.setText(String.valueOf(pv+1));
+				 
+					if(pv == 15) lblNewLabel_7.setText("EtudiantElite");
+					else if(pv == 19)lblNewLabel_7.setText("MaitreDuGobi");
+				
+					if(pv == 14) lblNewLabel_8.setText("15");
+					else if(pv == 19)lblNewLabel_8.setText(null);
+					else lblNewLabel_8.setText(String.valueOf((pv+1)%15));
 			}
 		});
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int pv; 
-				pv= Integer.valueOf(lblNewLabel_8.getText());
-				if(pv > 1) lblNewLabel_8.setText(String.valueOf(pv-1));
+				pv= Integer.valueOf(lblNewLabel_10.getText());
+				if(pv > 1) {
+					lblNewLabel_10.setText(String.valueOf(pv-1));
+				
+				
+					if(pv == 20) lblNewLabel_7.setText("EtudiantElite");
+					else if(pv == 16) lblNewLabel_7.setText("Etudiant");
+				
+					if(pv == 16) lblNewLabel_8.setText("15");
+					else lblNewLabel_8.setText(String.valueOf((pv-1)%15));
 			}
 		});
 		btnNewButton.addActionListener(new ActionListener() {
@@ -224,9 +240,9 @@ public class Affect1 {
 				totalamount=Integer.parseInt(text0)+Integer.parseInt(text1)+Integer.parseInt(text2)+Integer.parseInt(text3)+Integer.parseInt(text4);
 				
 				int whole;
-				String textreste=lblNewLabel_9.getText();
+				int textreste=Integer.parseInt(lblNewLabel_9.getText());
 				
-				if(textreste.equals("restes")) whole=400;
+				if(textreste == 400) whole=400;
 				else whole=Integer.parseInt(lblNewLabel_9.getText());
 				
 				lblNewLabel_9.setText(String.valueOf(whole-totalamount));
